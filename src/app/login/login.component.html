@@ -1,0 +1,28 @@
+ <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card"> 
+                <div class="text-center">
+                    <h3>Login</h3>
+                </div>
+                <form [formGroup]="loginform" (ngSubmit)="postdata(loginform)" autocomplete="off">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" autocomplete="off" class="form-control input-sm" formControlName="email"  class="form-control" id="exampleInputEmail1" autocomplete="off" aria-describedby="emailHelp" placeholder="Enter email" requered/>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>  
+                         <small *ngIf="loginform.get('email')?.invalid && loginform.get('email')?.touched" class="text-danger">Invalid email</small>    
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" autocomplete="off" class="form-control input-sm" formControlName="password"  class="form-control" id="exampleInputPassword1" placeholder="Password" requered/>
+                      <small *ngIf="loginform.get('password')?.invalid && loginform.get('password')?.touched" class="text-danger">Invalid password</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+                  <a style="color: blue;" routerLink="/signup">New user click to signup</a>
+            </div>
+        </div>
+    </div>
+</div>

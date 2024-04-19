@@ -1,0 +1,56 @@
+ 
+ <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card"> 
+                <div class="text-center">
+                    <h3>Demande de services</h3>
+                      <h6>Tous les champs sont aubligatoires</h6>
+                </div>
+              <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                  <div class="form-row">
+                    <div class="col">
+                      <label for="exampleInputEmail1">Demandeur(email)</label>
+                      <input type="email" class="form-control input-sm" autocomplete="off" aria-describedby="emailHelp"  formControlName="email_demandeur" autocomplete="off" placeholder="Entrez votre adresse email" title="EmaiL"> 
+                    </div>   
+                    
+
+                    <div class="col">
+                      <label for="exampleInputPassword1">Numéro</label>
+                      <input type="number" class="form-control input-sm" placeholder="Numéro" formControlName="numero_demandeur" autocomplete="off"  title="Numéro">
+                    </div>
+                    
+                  </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Enveloppe d'impulation</label>
+                      <input type="text" class="form-control input-sm" placeholder="Enveloppe d'impulation" formControlName="enveloppe" autocomplete="off"  title="Enveloppe">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Lieu d'intervation</label>
+                      <input type="text" class="form-control input-sm" placeholder="Lieu" formControlName="lieu_service" autocomplete="off"  title="Lieu">
+                    </div>
+
+                    <select class="form-control form-control-lg" formControlName="type_service" autocomplete="off" title="Type de service">
+                            <option>Entretient</option>
+                            <option>Installation</option>
+                            <option>Réparation</option>
+                            <option>Réservation</option>
+                            <option>Autre</option>
+                    </select>
+
+                     <div class="form-group">
+                        <label for="description">Objet de la demande:</label>
+                        <textarea id="description" name="description" rows="4" formControlName="objet_service" autocomplete="off" placeholder="Entrez l'objet de la demande" title="Objet de la demande"></textarea>
+                      </div>
+
+
+                    <button class="btn btn-danger" routerLink = "/home" style="background-color: red;">Annuler</button>
+
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

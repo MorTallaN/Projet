@@ -1,0 +1,36 @@
+ <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card"> 
+                <div class="text-center">
+                    <h3>Signup now</h3>
+                </div>
+
+                <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Name</label>
+                        <input type="text" autocomplete="off" class="form-control input-sm" formControlName="name" placeholder="Name" requered/>
+       				    <small *ngIf="angForm.get('name')?.invalid && angForm.get('name')?.touched"class="text-danger">Name is requered</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" autocomplete="off" class="form-control input-sm" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email" requered/>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      <small *ngIf="angForm.get('email')?.invalid && angForm.get('email')?.touched"class="text-danger">Email is requered</small>
+                    </div>
+   
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" autocomplete="off" class="form-control input-sm"  formControlName="password" id="exampleInputPassword1" placeholder="Password" requered/>
+                      <small *ngIf="angForm.get('password')?.invalid && angForm.get('password')?.touched"class="text-danger">password is requered</small>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-success">Signup now</button>
+                  </form>
+                  <a style="color: blue;" routerLink="/login">New user click to login</a>
+            </div>
+        </div>
+    </div>
+</div>
+

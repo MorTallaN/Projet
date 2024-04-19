@@ -1,0 +1,28 @@
+   <div class="container-fluid mt-3">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Numéro d'ordre</th>
+            <th scope="col">Exécutant</th>
+            <th scope="col">Date prévue</th>
+             <th scope="col">Action</th>
+            
+          </tr>
+        </thead>
+
+         <tbody>
+          <tr *ngFor="let service of services">
+            <td>{{service.numero_ordre}}</td>
+            <td>{{service.executant}}</td> 
+            <td>{{service.date_prevue}}</td>            
+            <td>
+                <button class="btn btn-warning">Confirmer</button>&nbsp;
+                <button class="btn btn-danger" style="background-color: red;">Annuler</button>
+                <input type="checkbox" aria-label="Checkbox for following text input">
+            </td>
+
+          </tr>          
+        </tbody>
+      </table>
+  </div>
+ 

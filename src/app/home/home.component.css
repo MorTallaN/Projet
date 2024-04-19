@@ -1,0 +1,23 @@
+ 
+h4{ 
+	color: black;
+
+ }
+
+ p{
+ 	color: white;
+ }
+
+  .carousel{
+    max-width: 100px;
+    height: auto;
+    
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    filter: brightness(750%);
+    filter: contrast(100%);
+}
